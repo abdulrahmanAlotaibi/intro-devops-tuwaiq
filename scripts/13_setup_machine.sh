@@ -15,5 +15,5 @@ echo 'alias cpu="sysctl -n machdep.cpu.brand_string"' >> ~/.zshrc
 echo 'alias myip="curl -s https://icanhazip.com"' >> ~/.zshrc
 }
 
-
-
+installPackages
+createShortcuts
