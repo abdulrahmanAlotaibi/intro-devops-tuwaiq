@@ -1,0 +1,18 @@
+version: "3.9"
+
+
+
+services:
+  app_python:
+    build: src/python/
+    restart: unless-stopped 
+    ports:
+      - "3003:3002"
+    
+  app_nodejs:
+    build: src/nodejs/
+    restart: unless-stopped 
+    ports:
+      - "3004:3000"
+ 
+
