@@ -1,0 +1,1 @@
+# TODO: Let's have a custome script for docker compose

@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  workshop-server:
+    build: .
+    ports: 
+      - "3000:3000"
+  redis:
+    image: "redis:alpine"
+  
+  linux-runner:
+    image: busybox
+    command: sh ./app/scripts/01_echo.sh
+    volumes:
+      - ./:/app
