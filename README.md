@@ -1,24 +1,28 @@
 # Intro to DevOps - Tuwaiq Academy Workshop
-This is the repo for Intro to DevOps workshop.
+Explain what is this workshop about. Also, explain each folder in the project in high level (1-2 lines) 
 
-## Intro to DevOps
+# Installation:
 
-### What is DevOps
 
-### CI/CD
+# Students Projects:
+## Overview
+the image is here
 
-### DevOps as a culture
-
-### Site-Relieblity Engineer (SRE)
-
----
-## Bash Terminal Basics
+# Useful VS Code Plugins:
 
 
 
-----
-## Docker Basics
 
 
-## Extra: Docker Compose 
+
+
+
+
+
+
+
+
+
+
+
 
