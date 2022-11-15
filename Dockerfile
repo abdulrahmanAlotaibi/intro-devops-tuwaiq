@@ -1,6 +1,7 @@
-FROM node:alpine
+FROM node:alpine3.16
 WORKDIR /app
-COPY . .
-RUN yarn install
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+COPY . /app
+EXPOSE 80
+RUN npm install node
+RUN ls
+CMD ["node", "app/src/index.js"]
