@@ -13,6 +13,11 @@ RUN yarn install
 # Running shell commands
 RUN ls
 
+ENV PGUSER=root
+ENV PGHOST='localhost'
+ENV PGDATABASE=postgres-just-work
+ENV PGPASSWORD=password
+ENV PGPORT=5444
 # This is container port
 EXPOSE 8000 
 

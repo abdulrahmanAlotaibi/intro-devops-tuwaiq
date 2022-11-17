@@ -8,6 +8,51 @@ const cors = require("cors")
 const path = require("path")
 const morgan = require("morgan")
 
+const { Pool, Client } = require('pg')
+// pools will use environment variables
+const config = {
+    user: 'root',
+    host: 'localhost',
+    database: 'postgres-just-work',
+    password: 'password',
+    port: 5444,
+  }
+
+
+const callDb = async ()=>{
+   try {
+
+    const pgPool = new Pool(config);
+    const pgPoolWrapper = {
+        async connect() {
+            for (let nRetry = 1; ; nRetry++) {
+                try {
+                    const client = await pgPool.connect();
+                    if (nRetry > 1) {
+                        console.info('Now successfully connected to Postgres');
+                    }
+                    return client;
+                } catch (e) {
+                    if (e.toString().includes('ECONNREFUSED') && nRetry < 5) {
+                        console.info('ECONNREFUSED connecting to Postgres, ' +
+                            'maybe container is not ready yet, will retry ' + nRetry);
+                        // Wait 1 second
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    } else {
+                        throw e;
+                    }
+                }
+            }
+        }
+    };
+    await pgPoolWrapper.connect()
+   } catch (error) {
+        console.log(error)
+   }
+}
+
+callDb()
+
 // Init the server for 
 const app = express()
 
