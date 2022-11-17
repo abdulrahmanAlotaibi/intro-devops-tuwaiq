@@ -2,11 +2,14 @@
   "name": "intro-devops-tuwaiq",
   "version": "1.0.0",
   "description": "tuwaiq workshop sample app",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "https://github.com/abdulrahmanAlotaibi/intro-devops-tuwaiq",
   "author": "Abdulrahman Alotaibi",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0"
   }
 }
